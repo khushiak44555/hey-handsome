@@ -23,7 +23,6 @@ const InteractiveButtons = ({ onYes }) => {
   };
 
   const handleNoHover = () => {
-    setIsNoHovered(true);
     moveNoButton();
   };
 
