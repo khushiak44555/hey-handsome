@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './InteractiveButtons.css';
 
 const InteractiveButtons = ({ onYes }) => {
   const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
   const [attemptCount, setAttemptCount] = useState(0);
-  const [isNoHovered, setIsNoHovered] = useState(false);
 
   const moveNoButton = () => {
     // Increase difficulty with each attempt
     setAttemptCount(prev => prev + 1);
     
-    // Get button container dimensions for better positioning
-    const container = document.querySelector('.buttons-container');
-    if (!container) return;
-    
-    const containerRect = container.getBoundingClientRect();
     const maxDistance = 150;
     
     // Generate random position around the button
@@ -26,7 +20,6 @@ const InteractiveButtons = ({ onYes }) => {
     const randomY = Math.sin(angle) * Math.min(distance, maxDistance);
     
     setNoButtonPosition({ x: randomX, y: randomY });
-    setIsNoHovered(false);
   };
 
   const handleNoHover = () => {

@@ -7,11 +7,9 @@ import FloatingHearts from './components/FloatingHearts';
 import ScrollingGallery from './components/ScrollingGallery';
 
 function App() {
-  const [answered, setAnswered] = useState(false);
   const [showCelebration, setShowCelebration] = useState(false);
 
   const handleYes = () => {
-    setAnswered(true);
     setTimeout(() => {
       setShowCelebration(true);
     }, 300);
