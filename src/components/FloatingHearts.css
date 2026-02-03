@@ -1,0 +1,52 @@
+.floating-hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -50px;
+  filter: drop-shadow(0 2px 12px rgba(255, 182, 193, 0.6));
+  user-select: none;
+  will-change: transform, opacity;
+}
+
+/* Add varying depth effects */
+.floating-heart:nth-child(3n) {
+  filter: blur(1.5px) drop-shadow(0 1px 10px rgba(255, 182, 193, 0.45));
+  opacity: 0.65;
+}
+
+.floating-heart:nth-child(5n) {
+  filter: blur(0.8px) drop-shadow(0 3px 15px rgba(255, 105, 180, 0.55));
+  opacity: 0.75;
+}
+
+.floating-heart:nth-child(7n) {
+  filter: drop-shadow(0 4px 18px rgba(255, 20, 147, 0.5));
+  opacity: 0.85;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floating-heart {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-heart {
+    font-size: 16px !important;
+  }
+  
+  /* Show fewer hearts on mobile for performance */
+  .floating-heart:nth-child(n+10) {
+    display: none;
+  }
+}

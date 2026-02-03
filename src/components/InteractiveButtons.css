@@ -1,0 +1,156 @@
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  position: relative;
+  min-height: 120px;
+  width: 100%;
+}
+
+.yes-button {
+  padding: 20px 70px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #FF1493 0%, #FF69B4 50%, #FFB6C1 100%);
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 32px rgba(255, 20, 147, 0.35),
+    0 4px 16px rgba(255, 105, 180, 0.25),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+.yes-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.yes-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.yes-button:hover {
+  transform: translateY(-2px);
+}
+
+.yes-button:active {
+  transform: translateY(0);
+}
+
+.no-button {
+  padding: 16px 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FF69B4;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 182, 193, 0.5);
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 20px rgba(255, 182, 193, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  position: relative;
+  white-space: nowrap;
+  z-index: 1;
+  letter-spacing: 0.3px;
+}
+
+.no-button:hover {
+  background: rgba(255, 240, 245, 0.98);
+  border-color: #FF69B4;
+  transform: scale(1.02);
+  box-shadow: 
+    0 6px 24px rgba(255, 182, 193, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.teasing-message {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #FF69B4;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 182, 193, 0.3);
+  box-shadow: 
+    0 8px 24px rgba(255, 182, 193, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .buttons-container {
+    gap: 15px;
+  }
+
+  .yes-button {
+    padding: 16px 50px;
+    font-size: 18px;
+  }
+
+  .no-button {
+    padding: 12px 35px;
+    font-size: 15px;
+  }
+
+  .teasing-message {
+    font-size: 13px;
+    padding: 8px 16px;
+    bottom: -45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons-container {
+    gap: 12px;
+    min-height: 60px;
+  }
+
+  .yes-button {
+    padding: 14px 40px;
+    font-size: 16px;
+  }
+
+  .no-button {
+    padding: 10px 30px;
+    font-size: 14px;
+  }
+
+  .teasing-message {
+    font-size: 12px;
+    padding: 8px 14px;
+    bottom: -40px;
+  }
+}
